@@ -1,0 +1,3 @@
+DB_NAME='database name'
+DB_PASSWORD='Enter your password'
+DB_USER='Enter your username'
