@@ -62,21 +62,21 @@ router.get("/post/:id", (req, res) => {
     },
     attributes: ["id", "emoji", "content", "title", "created_at"],
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: [
-      //     "id",
-      //     "emoji",
-      //     "comment_text",
-      //     "post_id",
-      //     "user_id",
-      //     "created_at",
-      //   ],
-      //   include: {
-      //     model: User,
-      //     attributes: ["username"],
-      //   },
-      // },
+      {
+        model: Comment,
+        attributes: [
+          "id",
+          "emoji",
+          "comment_text",
+          "post_id",
+          "user_id",
+          "created_at",
+        ],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
       {
         model: User,
         attributes: ["username"],
