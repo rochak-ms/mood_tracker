@@ -169,7 +169,7 @@ var view = (function () {
       var html, newHtml;
 
       html =
-        '<li class="entry %mood%-entry" id="%id%"><p>%text%</p><div class="overflow-hidden"><span class="timestamp">%timeStamp%</span><span class="delete material-symbols-outlined">delete</span></div></li>';
+        '<li class="entry %mood%-entry" id="%id%"><p>%text%</p><div class="overflow-hidden"><span class="timestamp">%timeStamp%</span><span class="delete">delete</span></div></li>';
 
       newHtml = html.replace("%mood%", entryList.mood);
       newHtml = newHtml.replace("%id%", entryList.id);
