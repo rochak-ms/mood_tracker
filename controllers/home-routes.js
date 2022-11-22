@@ -8,7 +8,14 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "emoji", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: [
+          "id",
+          "emoji",
+          "comment_text",
+          "post_id",
+          "user_id",
+          "created_at",
+        ],
         include: {
           model: User,
           attributes: ["username"],
@@ -39,6 +46,12 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
+
   res.render("signup");
 });
 
@@ -51,7 +64,14 @@ router.get("/post/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "emoji", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: [
+          "id",
+          "emoji",
+          "comment_text",
+          "post_id",
+          "user_id",
+          "created_at",
+        ],
         include: {
           model: User,
           attributes: ["username"],
@@ -86,7 +106,14 @@ router.get("/posts-comments", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "emoji", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: [
+          "id",
+          "emoji",
+          "comment_text",
+          "post_id",
+          "user_id",
+          "created_at",
+        ],
         include: {
           model: User,
           attributes: ["username"],
