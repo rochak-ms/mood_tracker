@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{#if homepage.handlebars }}
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
-    <link
+     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
     />
@@ -16,18 +17,27 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/home.css" />
+    {{/if}}
+
+    {{#if sign-up.handlebars }}
+    <link rel="stylesheet" href="./css/style.css" />
+    {{/if}}
+
+    {{#if login.handlebars }}
+    <link rel="stylesheet" href="./css/style.css" />
+    {{/if}}
+
     <title>Mood Tracker</title>
   </head>
   <body>
-     <header>
+    <header>
       <h1>Welcome to Mood Tracker<span>!</span></h1>
     </header>
 
+    {{{ body }}}
 
-
+    <script src="./js/login.js"></script>
 
   </body>
-
 </html>
