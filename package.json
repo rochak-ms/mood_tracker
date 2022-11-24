@@ -11,5 +11,22 @@
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.20",
     "sequelize": "^6.25.5"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "mood_tracker",
+  "description": "USER STORY - As developers, we'd like to create a mood tracker application to help users tracking their mental health performance.  Our app will allow traders, sellers who provide entertaining services, pleasing products to promote their business by matching and mapping the users' moods.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rochak-ms/mood_tracker.git"
+  },
+  "author": "[Rocha, Mitch, Tam]",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rochak-ms/mood_tracker/issues"
+  },
+  "homepage": "https://github.com/rochak-ms/mood_tracker#readme"
 }
