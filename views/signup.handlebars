@@ -1,38 +1,22 @@
-
- <header>
-      <h1>Welcome to Mood Tracker<span>!</span></h1>
-    </header>
-
-    <!-- login here -->
-    <div class="signup">
-      <h2>Sign Up</h2>
-      <h3>Enter your details:</h3>
-      <form class="signup-form">
-        <div class="textbox">
-          <input
-            type="text"
-            id="username-signup"
-            placeholder="Username"
-            required
-          />
-          <span class="material-symbols-outlined">account_circle</span>
-        </div>
-        <div class="textbox">
-          <input type="email" id="email-signup" placeholder="Email" required />
-          <span class="material-symbols-outlined">email</span>
-        </div>
-        <div class="textbox">
-          <input
-            class="form-input"
-            id="password-signup"
-            type="password"
-            placeholder="Password"
-            required
-          />
-          <span class="material-symbols-outlined">lock</span>
-        </div>
-        <button type="submit"><span>Create</span></button>
-        <p>Already a member ? <a href="/login">Log In</a></p>
-      </form>
+<div class="signup">
+  <h2>Sign Up</h2>
+  <h3>Enter your details:</h3>
+  <form class="signup-form">
+    <div class="textbox">
+      <input type="text" id="username-signup" placeholder="Username" required />
+      <span class="material-symbols-outlined">account_circle</span>
     </div>
-<script src="/js/sign-up.js"></script>
+    <div class="textbox">
+      <input type="email" id="email-signup" placeholder="Email" required />
+      <span class="material-symbols-outlined">email</span>
+    </div>
+    <div class="textbox">
+      <input class="form-input" id="password-signup" type="password" placeholder="Password" required />
+      <span class="material-symbols-outlined">lock</span>
+    </div>
+    <button href="/" type="submit"><span>Create</span></button>
+    <p>Already a member ? <a href="/login">Log In</a></p>
+  </form>
+</div>
+
+<script src="./js/sign-up.js"></script>
