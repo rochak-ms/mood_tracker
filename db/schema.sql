@@ -1,6 +1,2 @@
--- DROP DATABASE
-DROP DATABASE IF EXISTS moodtracker_db;
-
--- CREATE DATABASE
-CREATE DATABASE moodtracker_db;
-
+DROP DATABASE IF EXISTS crowdfund_db;
+CREATE DATABASE crowdfund_db;
