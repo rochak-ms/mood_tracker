@@ -97,6 +97,20 @@ var model = (function () {
 
       var newEntry = new Entry(entryId, text, mood, timeStamp);
 
+      if (newEntry) {
+        const response = fetch(`/api/entry`, {
+          method: 'POST',
+          body: JSON.stringify({ entryId, text, mood, timeStamp }),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+    
+        if (response.ok) {
+          return
+        }
+      }
+
       data.entryList.push(newEntry);
 
       return newEntry;
@@ -181,6 +195,16 @@ var view = (function () {
 
     deleteEntry: function (entryId) {
       var el = document.getElementById(entryId);
+      
+      const response = fetch(`/api/entry/${entryId}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to delete project');
+      }
 
       el.parentNode.removeChild(el);
     },
@@ -304,6 +328,9 @@ var controller = (function (viewC, modelC) {
 
       // 7. Saves latest state into the local storage
       localStorage.setItem('entryData', JSON.stringify(modelC.getData().data));
+
+      const data = localStorage.getItem('entryData')
+      data.forEach
 
       // 8. Clear input field (V)
       viewC.clearInput();
