@@ -15,7 +15,7 @@
       <div class="menu-bar">
         <div class="menu">
           <ul class="menu-links">
-            <li class="navlink active">
+            <li class="navlink">
               <a
                 class="dashboard"
                 href="#dashboard"
@@ -33,10 +33,10 @@
               </a>
             </li>
 
-            <li class="navlink">
-              <a href="#contact" onclick="menu(event, 'contact')">
+            <li class="navlink active">
+              <a href="#credit" onclick="menu(event, 'credit')">
                 <i class="bx bx-book-content icon"></i>
-                <span class="text nav-text">Contact</span>
+                <span class="text nav-text">Credit</span>
               </a>
             </li>
           </ul>
@@ -154,10 +154,90 @@
 
     <section class="tabcontent about" id="about">
       <div class="text">About</div>
+      <div
+        class="row"
+        style="
+              width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+        "
+      >
+        <h3 class="team1">Welcome to Mood Tracker!</h3>
+     <h3 class="about">Mood Tracker! is a free and open source web app app that aims to help you understand yourself better. Track your emotional landscape, keep a mood journal,and gain new insights into yourself. It's simple to use with a interactive user interface.
+      </h3></div>
     </section>
-    <section class="tabcontent about" id="contact">
-      <div class="text">Contact</div>
+
+    <!-- contact section starts here -->
+    <section class="tabcontent credit" id="credit">
+      <div class="text1">Credit</div>
+      <div
+        class="row"
+        style="
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          background: linear-gradient(to right, #5f2c82, #49a09d);
+        "
+      >
+        <h3 class="team">Meet the Team!</h3>
+        <div class="profile-card">
+          <div class="img">
+            <img src="./images/rochak.png" />
+          </div>
+          <div class="caption">
+            <h3>Rochak Shrestha</h3>
+            <p>Full Stack Developer</p>
+            <div class="social-links">
+              <a href="https://github.com/rochak-ms"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/rochak-shrestha-697a98179/"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="img">
+            <img src="./images/mitch.png" />
+          </div>
+          <div class="caption">
+            <h3>Mitchell Haris</h3>
+            <p>Full Stack Developer</p>
+            <div class="social-links">
+              <a href="https://github.com/mtchrrs"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://linktr.ee/mtchrrs"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <div class="img">
+            <img src="./images/tam.png" />
+          </div>
+          <div class="caption">
+            <h3>Tam Phan</h3>
+            <p>Full Stact Developer</p>
+            <div class="social-links">
+              <a href="https://github.com/Thanhtam84"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
 
     <script>
       const body = document.querySelector("body"),
@@ -189,7 +269,7 @@
         // Get all elements with class="tablinks" and remove the class "active"
         tablinks = document.getElementsByClassName("tablinks");
         for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
+          tablinks[i].className = tablinks[i].className.replace("active", "");
         }
 
         // Show the current tab, and add an "active" class to the link that opened the tab
