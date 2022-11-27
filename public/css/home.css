@@ -1,5 +1,6 @@
 /* Google Font Import - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 *{
     margin: 0;
     padding: 0;
@@ -439,7 +440,7 @@ body.dark .tabcontent textarea {
 .delete {
     font-size: 14px;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     float: right;
     color: #de3a04;
     cursor: pointer; 
@@ -565,3 +566,116 @@ body.dark .tabcontent textarea {
 }
 
 }           
+
+.text > header {
+display: flex;
+justify-content: center;
+align-items: center;
+};
+
+/* contacts */
+
+.row{
+    width: 100%;
+          height: 100vh;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          background: linear-gradient(to right, #5f2c82, #49a09d);
+  }
+  .profile-card{
+    position: relative;
+    width: 263px;
+    height: 263px;
+    background: transparent;
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px rgba(168, 207, 61, 0.4);
+    transition: .6s;
+    margin: 0 25px;
+  }
+  .profile-card:hover{
+    border-radius: 10px;
+    height: 305px;
+    background: var(--sidebar-color);
+  }
+  .profile-card .img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .6s;
+    z-index: 99;
+  }
+  .profile-card:hover .img{
+    transform: translateY(-60px);
+  }
+  .img img{
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+  }
+  .profile-card:hover img{
+    background-color: dodgerblue;
+    border-radius: 50%;
+  }
+  .caption{
+    text-align: center;
+    transform: translateY(-85px);
+    opacity: 0;
+    transition: .6s;
+  }
+  .profile-card:hover .caption{
+    opacity: 1;
+  }
+  .caption h3{
+    font-size: 21px;
+    color: var(--text-color);
+  }
+  .caption p{
+    font-size: 15px;
+    color: #0c52a1;
+    font-family: sans-serif;
+    margin: 2px 0 22px 0;
+  }
+  .caption .social-links a{
+    color: var(--text-color);
+    margin-right: 15px;
+    font-size: 23px;
+    transition: .6s;
+  }
+  .social-links a:hover{
+    color: #0c52a1;
+  }
+
+  .tabcontent .text1 {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--text-color);
+    padding: 12px 60px;
+    border-bottom: 1px solid #242526;
+}
+
+.team {
+    position: absolute;
+    font-size: 6rem;
+    color: var(--text-color);
+    top: 150px;
+}
+
+
+.team1 {
+    position: inherit;
+    font-size: 5rem;
+    color: var(--text-color)
+}
+h3.about {
+    width: 80%;
+    font-size: 23px;
+    color: var(--text-color);
+    font-weight: 300;
+    margin: 0 auto;
+    position: inherit;
+}

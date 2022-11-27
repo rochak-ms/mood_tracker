@@ -1,22 +1,22 @@
-'use strict';
+"use strict";
 
 var model = (function () {
   // Setup local storage (For now I'm not so sure how this works yet but at least it works!)
   var data;
 
-  if (localStorage.getItem('entryData')) {
+  if (localStorage.getItem("entryData")) {
     // Retrieves the 'last saved state' from Local Storage, so that the data to work on upon refresh always has the lastest update.
-    data = JSON.parse(localStorage.getItem('entryData'));
+    data = JSON.parse(localStorage.getItem("entryData"));
   } else {
     // First time the page loads, this is what it sees. It's as per normal, as if there's no Local Storage involved.
     // Local Storage: EMPTY
     data = {
       users: [
         {
-          email: 'ava@gmail.com',
-          password: '123456',
-          name: 'Ava Guerrero',
-          profilePhoto: 'somephoto.jpg',
+          email: "ava@gmail.com",
+          password: "123456",
+          name: "Ava Guerrero",
+          profilePhoto: "somephoto.jpg",
         },
       ],
       entryList: [],
@@ -38,7 +38,7 @@ var model = (function () {
 
     // Then this saves the above data structure into the Local Storage.
     // Local Storage: NO LONGER EMPTY
-    localStorage.setItem('entryData', JSON.stringify(data));
+    localStorage.setItem("entryData", JSON.stringify(data));
   }
 
   class Entry {
@@ -55,10 +55,10 @@ var model = (function () {
   }
 
   function calculateMoodPerc() {
-    calculateIndMoodPerc('happy');
-    calculateIndMoodPerc('sad');
-    calculateIndMoodPerc('neutral');
-    calculateIndMoodPerc('unsure');
+    calculateIndMoodPerc("happy");
+    calculateIndMoodPerc("sad");
+    calculateIndMoodPerc("neutral");
+    calculateIndMoodPerc("unsure");
   }
 
   function calculateIndMoodPerc(mood) {
@@ -89,7 +89,7 @@ var model = (function () {
     addEntry: function (text, mood) {
       // Temporary date format, later can use a JS library, JS don't have good date methods
       var date = new Date();
-      var dateString = moment().format('ddd, D MMMM YYYY, h:mm A');
+      var dateString = moment().format("ddd, D MMMM YYYY, h:mm A");
 
       var timeStamp = dateString;
       var entryId = data.entryIdCounter++;
@@ -146,18 +146,18 @@ var model = (function () {
 
 var view = (function () {
   var domEl = {
-    moodSelectorDOM: document.getElementById('moods'),
-    inputEntryDOM: document.getElementById('input-diary'),
-    entriesDOM: document.getElementById('entries'),
-    entriesQDOM: document.querySelector('#entries'),
-    meterHappyDOM: document.getElementById('meter-happy'),
-    meterSadDOM: document.getElementById('meter-sad'),
-    meterNeutralDOM: document.getElementById('meter-neutral'),
-    meterUnsureDOM: document.getElementById('meter-unsure'),
-    deleteEntryDOM: document.getElementsByClassName('delete'),
-    moodSorterDOM: document.getElementById('mood-sorter'),
-    moodSorterDateDOM: document.getElementById('mood-sorter-date'),
-    emptyEntryDOM: document.getElementById('empty-entries'),
+    moodSelectorDOM: document.getElementById("moods"),
+    inputEntryDOM: document.getElementById("input-diary"),
+    entriesDOM: document.getElementById("entries"),
+    entriesQDOM: document.querySelector("#entries"),
+    meterHappyDOM: document.getElementById("meter-happy"),
+    meterSadDOM: document.getElementById("meter-sad"),
+    meterNeutralDOM: document.getElementById("meter-neutral"),
+    meterUnsureDOM: document.getElementById("meter-unsure"),
+    deleteEntryDOM: document.getElementsByClassName("delete"),
+    moodSorterDOM: document.getElementById("mood-sorter"),
+    moodSorterDateDOM: document.getElementById("mood-sorter-date"),
+    emptyEntryDOM: document.getElementById("empty-entries"),
   };
 
   // PUBLIC PROPERTIES & METHODS -------------------------------------------
@@ -169,14 +169,14 @@ var view = (function () {
       var html, newHtml;
 
       html =
-        '<li class="entry %mood%-entry" id="%id%"><p>%text%</p><div class="overflow-hidden"><span class="timestamp">%timeStamp%</span><span class="delete material-symbols-outlined">delete</span></div></li>';
+        '<li class="entry %mood%-entry" id="%id%"><p>%text%</p><div class="overflow-hidden"><span class="timestamp">%timeStamp%</span><span class="delete">delete</span></div></li>';
 
-      newHtml = html.replace('%mood%', entryList.mood);
-      newHtml = newHtml.replace('%id%', entryList.id);
-      newHtml = newHtml.replace('%text%', entryList.text);
-      newHtml = newHtml.replace('%timeStamp%', entryList.timeStamp);
+      newHtml = html.replace("%mood%", entryList.mood);
+      newHtml = newHtml.replace("%id%", entryList.id);
+      newHtml = newHtml.replace("%text%", entryList.text);
+      newHtml = newHtml.replace("%timeStamp%", entryList.timeStamp);
 
-      domEl.entriesDOM.insertAdjacentHTML('afterbegin', newHtml);
+      domEl.entriesDOM.insertAdjacentHTML("afterbegin", newHtml);
     },
 
     deleteEntry: function (entryId) {
@@ -186,17 +186,17 @@ var view = (function () {
     },
 
     displayEntries: function (entryList) {
-      domEl.entriesDOM.innerHTML = '';
+      domEl.entriesDOM.innerHTML = "";
 
       entryList.forEach(function (entry) {
-        var entryItemDOM = document.createElement('li');
-        var entryTextDOM = document.createElement('p');
-        var metaWrapperDOM = document.createElement('div');
-        var timeStampDOM = document.createElement('span');
-        var deleteDOM = document.createElement('span');
+        var entryItemDOM = document.createElement("li");
+        var entryTextDOM = document.createElement("p");
+        var metaWrapperDOM = document.createElement("div");
+        var timeStampDOM = document.createElement("span");
+        var deleteDOM = document.createElement("span");
 
         // Create entry wrapper & class names
-        entryItemDOM.className = 'entry';
+        entryItemDOM.className = "entry";
         entryItemDOM.className += ` ${entry.mood}-entry`;
         entryItemDOM.id = entry.id;
 
@@ -210,15 +210,15 @@ var view = (function () {
         entryTextDOM.innerHTML = entry.text;
 
         entryItemDOM.appendChild(metaWrapperDOM);
-        metaWrapperDOM.className = 'overflow-hidden';
+        metaWrapperDOM.className = "overflow-hidden";
 
         metaWrapperDOM.appendChild(timeStampDOM);
-        timeStampDOM.className = 'timestamp';
+        timeStampDOM.className = "timestamp";
         timeStampDOM.innerHTML = entry.timeStamp;
 
         metaWrapperDOM.appendChild(deleteDOM);
-        deleteDOM.className = 'delete';
-        deleteDOM.innerHTML = 'Delete';
+        deleteDOM.className = "delete";
+        deleteDOM.innerHTML = "delete";
       });
     },
 
@@ -227,31 +227,31 @@ var view = (function () {
     },
 
     clearInput() {
-      domEl.inputEntryDOM.value = '';
+      domEl.inputEntryDOM.value = "";
     },
 
     markSelectedMoodSort: function (e) {
       for (var i = 0; i < domEl.moodSorterDOM.children.length; i++) {
-        domEl.moodSorterDOM.children[i].className = '';
+        domEl.moodSorterDOM.children[i].className = "";
       }
-      e.target.className = 'sort-selected';
+      e.target.className = "sort-selected";
     },
 
     handleError() {
       domEl.inputEntryDOM.focus();
-      domEl.inputEntryDOM.style.borderColor = '#f16767';
+      domEl.inputEntryDOM.style.borderColor = "#f16767";
     },
 
     clearError() {
-      domEl.inputEntryDOM.style.borderColor = '#cde2f4';
+      domEl.inputEntryDOM.style.borderColor = "#cde2f4";
     },
 
     updateMoodMeter: function (moodPerc) {
       // document.getElementById("myBtn").style.width = "300px";
-      domEl.meterHappyDOM.style.width = moodPerc.happy + '%';
-      domEl.meterNeutralDOM.style.width = moodPerc.neutral + '%';
-      domEl.meterSadDOM.style.width = moodPerc.sad + '%';
-      domEl.meterUnsureDOM.style.width = moodPerc.unsure + '%';
+      domEl.meterHappyDOM.style.width = moodPerc.happy + "%";
+      domEl.meterNeutralDOM.style.width = moodPerc.neutral + "%";
+      domEl.meterSadDOM.style.width = moodPerc.sad + "%";
+      domEl.meterUnsureDOM.style.width = moodPerc.unsure + "%";
     },
   };
 })();
@@ -269,13 +269,13 @@ var controller = (function (viewC, modelC) {
     checkIfHaveEntry();
 
     // Event Handlers
-    viewC.domEl.moodSelectorDOM.addEventListener('click', addEntryCont);
-    viewC.domEl.entriesQDOM.addEventListener('click', deleteEntryCont);
-    viewC.domEl.moodSorterDOM.addEventListener('click', sortEntryCont);
+    viewC.domEl.moodSelectorDOM.addEventListener("click", addEntryCont);
+    viewC.domEl.entriesQDOM.addEventListener("click", deleteEntryCont);
+    viewC.domEl.moodSorterDOM.addEventListener("click", sortEntryCont);
   }
 
   function addEntryCont(e) {
-    if (viewC.domEl.inputEntryDOM.value === '') {
+    if (viewC.domEl.inputEntryDOM.value === "") {
       viewC.handleError();
     } else {
       viewC.clearError();
@@ -285,7 +285,7 @@ var controller = (function (viewC, modelC) {
       // var inputEntry = quill.container.firstChild.innerHTML;
 
       // 1.1 Convert 'enter' to line breaks
-      inputEntry = inputEntry.replace(/\r?\n/g, '<br />');
+      inputEntry = inputEntry.replace(/\r?\n/g, "<br />");
 
       // 2. Get selected mood (V)
       var selectedMood = getSelectedMoodCont(e).slice(5);
@@ -303,7 +303,7 @@ var controller = (function (viewC, modelC) {
       viewC.updateMoodMeter(modelC.getData().moodPerc);
 
       // 7. Saves latest state into the local storage
-      localStorage.setItem('entryData', JSON.stringify(modelC.getData().data));
+      localStorage.setItem("entryData", JSON.stringify(modelC.getData().data));
 
       // 8. Clear input field (V)
       viewC.clearInput();
@@ -315,7 +315,7 @@ var controller = (function (viewC, modelC) {
 
   function deleteEntryCont(e) {
     // Only execute code if target is 'delete' (so that other buttons won't trigger this function)
-    if (e.target.className === 'delete') {
+    if (e.target.className === "delete") {
       var confirmDel = true;
       // confirm("Are you sure you want to delete this entry?");
 
@@ -343,7 +343,7 @@ var controller = (function (viewC, modelC) {
 
         // Save latest state into local storage (M)
         localStorage.setItem(
-          'entryData',
+          "entryData",
           JSON.stringify(modelC.getData().data)
         );
 
@@ -359,11 +359,11 @@ var controller = (function (viewC, modelC) {
     // Show selected mood (V)
     var selectedMoodSort = getSelectedMoodSortCont(e).slice(5);
 
-    if (selectedMoodSort !== 'sorter') {
+    if (selectedMoodSort !== "sorter") {
       // Highlight selected mood (V)
       viewC.markSelectedMoodSort(e);
 
-      if (selectedMoodSort === 'all') {
+      if (selectedMoodSort === "all") {
         viewC.displayEntries(modelC.getData().entryList);
       } else {
         // Get selected mood from the datalist (M)
@@ -385,15 +385,15 @@ var controller = (function (viewC, modelC) {
 
   function checkIfHaveEntry() {
     if (modelC.getData().entryList.length === 0) {
-      viewC.toggleDisplay(viewC.domEl.emptyEntryDOM, 'block');
+      viewC.toggleDisplay(viewC.domEl.emptyEntryDOM, "block");
     } else {
-      viewC.toggleDisplay(viewC.domEl.emptyEntryDOM, 'none');
+      viewC.toggleDisplay(viewC.domEl.emptyEntryDOM, "none");
     }
   }
 
   return {
     init: function () {
-      console.log('App has started.');
+      console.log("App has started.");
       initSetUp();
     },
   };
