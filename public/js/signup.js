@@ -6,6 +6,33 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector("#password-signup").value.trim();
   console.log(email);
 
+  // require node mailer
+  "use strict";
+  const nodemailer = require("nodemailer");
+
+  async function main() {
+    let transporter = nodemailer.createTransport({
+      host: "smtp.ethereal.email",
+      port: 587,
+      secure: false, 
+      auth: {
+        user: moodymoodtrackerssss, 
+        pass: moodymoodtracker, 
+      },
+    });
+
+    let info = await transporter.sendMail({
+      from: '"MoodTracker" <moodymoodtrackerssss@gmail.com>', // sender address
+      to: email,
+      subject: "Welcome!", 
+      text: "Welcome to the moodtracker app! We hope that you find a lot of value out of this application!", 
+      html: "<b>Welcome!</b>", 
+    });
+
+    console.log("email sent");
+  }
+  main().catch(console.error);
+
   if (name && email && password) {
     const response = await fetch("/api/users", {
       method: "POST",

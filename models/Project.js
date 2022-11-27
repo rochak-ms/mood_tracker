@@ -5,7 +5,7 @@ class Project extends Model {}
 
 Project.init(
   {
-    id: {
+    entryid: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -15,7 +15,7 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    text: {
       type: DataTypes.STRING,
     },
     date_created: {
@@ -23,8 +23,8 @@ Project.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
+    moodPerc: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     user_id: {
