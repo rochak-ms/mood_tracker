@@ -87,6 +87,8 @@
       </div>
     </nav>
 
+    
+
     <!-- right sections -->
     <section class="tabcontent dashboard" id="dashboard">
       <div class="text">Dashboard</div>
@@ -176,9 +178,56 @@
 
     <section class="tabcontent about" id="about">
       <div class="text">About</div>
+      <div class="about">
+          <h2><marquee behavior="scroll" direction="left">Looking into Mood Tracker is looking after your happiness!</marquee></h2>
+          <img src="./images/happynessDirection.jpg" width=750 height=750 alt="insert happy images">
+          <img src="./images/happyFaceOnRoad.jpg" width=750 height=750 alt="insert happy images">
+          <img src="./images/happyStone.jpg" width=750 height=750 alt="insert happy images">
+          <img src="./images/sunRise.jpg" width=750 height=750 alt="insert happy images">
+          <center>
+            <h1><p>
+              We capture, track and display the performance of your inner mood.
+              We analyze your thoughts, identify your mood patterns for solutions.
+            </p></h1> 
+            <img src="./images/meditationInSun.jpg" width=500 height=500 alt="insert happy images">
+          </center>
+      </div>
+
     </section>
+    
     <section class="tabcontent about" id="contact">
       <div class="text">Contact</div>
+      <form>
+        <h1>Contact Mood Tracker</h1>
+        <p>
+          <label for="username">Name:</label>
+          <input id="username" type="text" placeholder="First Last" />
+        </p>
+        <p>
+          <label  for="email">E-mail:</label>
+          <input id="email" type="text" placeholder="me@example.com" />
+        </p>
+        <p>
+          <label for="Condition">Your current mood:</label>
+          <select id="condition">
+            <option>Sad</option>
+            <option selected>Happy</option>
+            <option>Not sure</option>
+            <option>Neutral</option>
+          </select>
+        </p>
+        <p>
+          <label for="comment">Self-assessment:</label>
+          <textarea id="comment" placeholder="My mind is blank!!!"></textarea>
+        </p>
+        <p>
+          <input class="checkbox" id="agreement" type="checkbox" />
+          <label for="agreement">I agree to share my e-mail address and my mood conditions with The Mood Tracker</label>
+        </p>
+        <p>
+          <button>Submit</button>
+        </p>
+      </form>
     </section>
 
     <script>

@@ -43,6 +43,20 @@ body.dark{
     --text-color: #ffffff;
 }
 
+.about > img {
+    float: left;
+    width: 50%;
+    padding: 20px 20px;
+}
+
+.about > text {
+    font-size: 200%;
+}
+
+#contact .text {
+    font-size: 200%;
+}
+
 /* ===== Sidebar ===== */
  .sidebar{
     position: fixed;
