@@ -4,7 +4,6 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const helpers = require("./utils/helpers");
-const nodemailer = require("nodemailer");
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -44,35 +43,4 @@ app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
-});
-
-app.post("/", async (req, res) => {
-
-  const email = document.querySelector("#email-signup").value.trim();
-  
-  const transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    secure: false,
-    auth: {
-      user: moodymoodtrackerssss,
-      pass: moodymoodtracker,
-    },
-  });
-
-  const mailOptions = {
-    from: '"MoodTracker" <moodymoodtrackerssss@gmail.com>',
-    to: email,
-    subject: "Welcome!",
-    text: "Welcome to the moodtracker app! We hope that you find a lot of value out of this application!",
-  };
-
-  const response = await transporter.sendMail(mailOptions, (err, info) => {
-    if (err) {
-      res.send(err);
-    } else {
-      console.log(`Email sent! ${info.response}`);
-      res.send("Success");
-    }
-  });
 });

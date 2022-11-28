@@ -1,5 +1,3 @@
-const nodemailer = require("nodemailer");
-
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -8,24 +6,11 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector("#password-signup").value.trim();
   console.log(email);
 
-  const handleSubmit = async (email) => {
-    const response = await fetch("/", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(email),
-    });
-    const json = await response.json();
-    return await json;
-  };
-
   if (name && email && password) {
     const response = await fetch("/api/users", {
       method: "POST",
-      body: JSON.stringify({ name, email, password }),
       headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password }),
     });
 
     if (response.ok) {
