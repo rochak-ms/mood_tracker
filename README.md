@@ -1,48 +1,107 @@
-# mood_tracker
+# Mood Tracker
 
-USER STORY
-- As developers, we'd like to create a mood tracker application to help users tracking their mental health performance. 
-Our app will allow traders, sellers who provide entertaining services, pleasing products to promote their business by matching and mapping the users' moods.
+![License badge](https://shields.io/badge/license-MIT-blue.svg)
 
-LOGIN PAGE
-- This page enables the new users to register new accounts. Then, the users can log in to set up, record their mood status to reflect their mental situation.
+Mood Tracker! is a free and open source web app app that aims to help you understand your emotion and feelings better. Track your emotional landscape, keep a mood journal,and gain new insights into yourself. It's simple to use with a interactive user interface. <p>
+This application gives you a option to add a comment about your current mood or feelings like Happy, Sad, Neutral, Unsure. After you done commenting and you choose a memoji respectively. It will display your data with a date and time you posted so can keep track on your mood journal.
 
-- This login page will only accept the username or email inputs and limit the passwords length to 16 characters with 1 capital, 1 special character
+## User Story
 
-- This login page will send warning messages when the login request was sent with either username or password or both missing.
+```
+AS A user
+- I WANT to keep records of my day to day and time to time mood on every moment.
+- SO THAT I can track present and past mood that is only available to myself.
+```
 
-- This page will allow the app backend to capture the users' inputs and send to the server database.
+## Acceptance Criteria
 
+```
+GIVEN I am tracking my mood
+WHEN I enter the mood tracker and click the Enter button.
+THEN I am presented with Sign Up page where I can create a personal account using my email and password.
+WHEN I click on Create button on Sign Up page
+THEN I am presented with a Login Page
+WHEN I enter the Login Page
+THEN I am presented with option to Login into my account using my email and password.
+WHEN I click on Login button
+THEN I should see the my profile dashboard where I get the option to take note and choose the memoji emotion like happy, sad, neutral, unsure.
+```
 
-MAIN PAGE
+# Output
 
-- We would like to create an attractive UI with the functional selections, i.e. setting, ... on the left column.
+### 1. Welcome Page
 
-- We would like to design an interactive main page with the optional listed icons matching the mood categories.
+![Start Page](./public/images/Welcome-Page.png)
 
-- We would like to capture and record the users' selections with the corresponding date and time and send to the database.
+#
 
+### 2. SignUp Page
 
-MOOD TRACKING
+![A user can create an account using email and password.](./public/images/Signup-page.png)
 
-- We would like the tracking app to display the mood records when the users send the request and specify a period of time.
+#
 
-- We would like the app to summarize and categorize the users' mood within a specific period.
+### 3. Login Page
 
-- We would like the app to display the counts of a selected mood when the users specify a period.
+![A user is able to login using their email and password.](./public/images/Login-page.png)
 
-- We would like the app to display the conts of the days when the users input a certain number of mood category.
+### 3. Login Page
 
-- We would like to have the corresponding icons displayed next to each selected type of mood, at each review.
+![A user is able to use the dashboard to keep record and track of their mood journal.](./public/images/Profile-dashboard.png)
 
+#
 
-SUGGESTION
+## Table of Contents
 
-- We would like to send a querying suggestion for three random outdoor entertainment, i.e. football tickets, eating out, cinemas,... to the users having best mood of the week.  
+- [Installation](#installation)
+- [Usage](#usage)
+- [Links](#links)
+- [License](#license)
+- [Contributing](#contributing)
+- [Credits](#Credits)
+- [Questions](#questions)
 
-- We would like to suggest the medium entertainment services, i.e tours with hotels, ... to the users having best mood of the month.
+#
 
-- We would like to suggest the immediate entertainment, i.e. shopping promotion, gaming, casino, ... to the users have neutral mood (not good, not bad).
+# Installation
 
-- We would like to suggest the relaxing entertainment, i.e. massaging, swimming, gyms, ... to the users have bad mood.
+The user may clone this repository from GitHub. This application requires Node.js, Express.js, Sequelize, mysql2, connection-session/express-session, nodemailer, moment, dotenv, bcrypt, express-handlebars. If cloning the repo, run npm i to run all modules. To connect to the database run mysql -u root -p and enter password from .env file(need to create .env file in root folder first). Then source the schema.sql. To connect to the server run npm start.
 
+# Usage
+
+This application will allow users to sign up if they are not a member, then once they are logged in they are able to view their user profile, and able to use dashboard section to keep track of their mood journal. User will able to save their mood journal as well as delete it if necessary.
+Please view the site hosted on the Heroku platform - [Mood Tracker](https://trackmymood.herokuapp.com)
+
+# Links
+
+Below is the link related to the project:
+
+- Deployed application - [Click Here](https://trackmymood.herokuapp.com)
+
+- GitHub repository - [Click Here](https://github.com/rochak-ms/mood_tracker.git)
+
+# License
+
+![License badge](https://shields.io/badge/license-MIT-blue.svg)
+
+Please visit [Here](https://mit-license.org/) for detail information.
+
+# Contributing
+
+- Rochak: https://github.com/rochak-ms
+- Mitchell: https://github.com/mtchrrs
+- Tam: https://github.com/Thanhtam84
+
+# Tests
+
+```
+none
+```
+
+## Questions
+
+If you have any questions about the project, please contact me at rochak.ms@gmail.com. Or you can find me [Here](https://github.com/rochak-ms) on GitHub.
+
+#
+
+`© 2022 Find A Meal -- Group-2(Rochak, Mitchell, Tam) Project-2`
