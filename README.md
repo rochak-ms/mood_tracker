@@ -104,4 +104,4 @@ If you have any questions about the project, please contact me at rochak.ms@gmai
 
 #
 
-`© 2022 Find A Meal -- Group-2(Rochak, Mitchell, Tam) Project-2`
+`© 2022 Mood Tracker! -- Group-2(Rochak, Mitchell, Tam) Project-2`
