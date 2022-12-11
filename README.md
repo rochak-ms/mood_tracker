@@ -14,13 +14,17 @@ LOGIN PAGE
 - This page will allow the app backend to capture the users' inputs and send to the server database.
 
 
-MAIN PAGE
+MAIN PAGE_ DASHBOARD
 
 - We would like to create an attractive UI with the functional selections, i.e. setting, ... on the left column.
 
 - We would like to design an interactive main page with the optional listed icons matching the mood categories.
 
 - We would like to capture and record the users' selections with the corresponding date and time and send to the database.
+
+ABOUT 
+
+- 
 
 
 MOOD TRACKING
